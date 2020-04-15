@@ -47,7 +47,7 @@
 							{
 
 								echo -e "\tMENU PRINCIPALE\n" #On affiche menu principale
-								echo -e "Mode 1 joueur tapez 1 \n Mode 2 joueurs tapez 2 \n Joueur vs ordinateur taper 3 \n Votre choix : " #On affiche Mode 1 joueur tapez 1 \n Mode 2 joueurs tapez 2 \n Joueur vs ordinateur taper 3 \n Votre choix 
+								echo -e "Mode 1 joueur tapez 1 \n Mode 2 joueurs tapez 2 \n Joueur vs ordinateur taper 3 \n Votre choix : \n" #On affiche Mode 1 joueur tapez 1 \n Mode 2 joueurs tapez 2 \n Joueur vs ordinateur taper 3 \n Votre choix 
 								read modeDuJeu #Lire le modeDuJeu
 
 								if (($modeDuJeu==1))
@@ -232,7 +232,7 @@ do
 		#echo -e "Le minimum possible du nombre mystère est de: $minNombreMystere2 \n"
         	#echo "IA : Quel est le nombre ? " #On affiche à l'écran Joueur 2 : Quel est le nombre ?
        		nombrePasEncoreEntre2=$( expr $maxNombreMystere2 / 2 ); # On dit à l'IA qu'elle doit rentrer la moitié du maximum
-		echo -e nombreEntre2,"\n"
+		#echo -e nombreEntre2,"\n"
         	debutDuJeu=1
 	else
 		niveau
@@ -260,7 +260,7 @@ do
            	nombreMystere2=$((RANDOM%10000+0));   #Génération du nombre aléatoire	
 
 	else #Sinon
-		echo -e "An error has occured" #Une grosse erreur c'est produite
+		echo -e "An error has occured \n" #Une grosse erreur c'est produite
 
 	fi #Génération des nombres mystères
 
@@ -275,7 +275,7 @@ do
 				compteurDeCoups=$(($compteurDeCoups+1)) #On incrémente le compteurDeCoups
 				if [ $partieModeDeJeu1 -eq 1 ] #Si la finDuJeu vaut 0
 				then #Alors
-					echo -e "Joueur 1 : Quel est le nombre ?\n" #On affiche à l'écran Joueur 1 : Quel est le nombre ?\n
+					echo -e "Joueur 1 : Selon toi, quel est le nombre mystère ?\n" #On affiche à l'écran Joueur 1 : Quel est le nombre ?\n
 					read nombreEntre #On lit le nombreEntre
 				fi #Fin de la conditionn si la finDuJeu est égale à 0
 
@@ -300,8 +300,8 @@ do
 
                 		fi #Fin de la condition où le nombreMystere est plus grand que le nombreEntre
 
-				echo -e "compteurMort: $compteurMort"
-				echo -e "compteurDeCoups: $compteurDeCoups"
+				#echo -e "compteurMort: $compteurMort"
+				#echo -e "compteurDeCoups: $compteurDeCoups"
 
                	 		if [ "$compteurMort" -le "$compteurDeCoups" ] #Si le compteurMort est égale au compteurDeCoups
                 		then #ALors
@@ -324,7 +324,7 @@ do
 		
 		while [ $partieModeDeJeu2 -eq 1 ] #La partie continue tant qu'un des deux joueurs n'a pas terminé
 		do
-        		echo -e "Au bout de combien de tentatives voulez vous mourir joueur 2?" #On affiche votre choix à l'écran
+        		echo -e "Au bout de combien de tentatives voulez vous mourir joueur 2 ? \n" #On affiche votre choix à l'écran
             		read compteurMort2 #On scanne le compteurMort2
 
             		while (($nombreEntre!=$nombreMystere || $nombreEntre2!=$nombreMystere2 ))	#Tant qu'aucun des deux joueurs n'a trouvé la réponse	
@@ -337,7 +337,7 @@ do
                 		if [ $partieModeDeJeu2 -eq 1 ] #Si finDuJeu est différent de 1
                 		then #Alors
 
-                			echo -e "Joueur 1 : Quel est le nombre ? " #On affiche à l'écran Joueur 1 : Quel est le nombre ?
+                			echo -e "Joueur 1 : Selon toi, quel est le nombre mystère ? \n" #On affiche à l'écran Joueur 1 : Quel est le nombre ?
                     			read nombreEntre #On scanne le nombreEntre par le joueur 1
 
                 			if [ "$nombreMystere" -gt "$nombreEntre" ]  #Si le nombreMystere est plus grand que le nombreEntre
@@ -353,22 +353,22 @@ do
 					else #Sinon
                 		
                     				echo -e "Bravo, vous avez trouve le nombre mystere en $compteurDeCoups coups !!!\n\n" #On affiche Bravo, vous avez trouve le nombre mystere en  x coups !!!
-						echo -e "C'est dommage joueur 2, vous avez perdu avec $compteurDeCoups2 tenattives vous ferez mieux la prochaine fois"
-						echo -e "Joueur 1 à vous de donner la réponse à la question suivante"
+						echo -e "C'est dommage joueur 2, vous avez perdu avec $compteurDeCoups2 tentatives vous ferez mieux la prochaine fois \n"
+						echo -e "Joueur 1 à vous de donner la réponse à la question suivante \n"
 						partieModeDeJeu2=0
                 			fi #Fin du cas où le nombreMystere est plus grand que le nombreEntre
 
-					echo -e "\n \n CompteurMort : $compteurMort"
+					#echo -e "\n \n CompteurMort : $compteurMort"
 
- 					echo -e "compteurDeCoups : $compteurDeCoups \n \n "
+ 					#echo -e "compteurDeCoups : $compteurDeCoups \n \n "
 
                	 			if [ "$compteurMort" -le "$compteurDeCoups" ] #Si le compteurMort est égale au compteurDeCoups
                 			then #ALors
 
                     				echo -e "\t*****************GAME-OVER*****************\n" #On affiche AU-REVOIR quand l'utilisateur quitte le jeu
-						echo -e "Le joueur 1 a perdu avec $compteurDeCoups tentatives"
-						echo -e "Le joueur 2 a gagné avec $compteurDeCoups2 tentatives"
-						echo -e "Joueur 2 à vous de donner la réponse à la question suivante"
+						echo -e "Le joueur 1 a perdu avec $compteurDeCoups tentatives \n"
+						echo -e "Le joueur 2 a gagné avec $compteurDeCoups2 tentatives \n"
+						echo -e "Joueur 2 à vous de donner la réponse à la question suivante \n"
 						partieModeDeJeu2=0
 						nombreEntre2=$nombreMystere2
 						break;
@@ -384,7 +384,7 @@ do
                			if [ $partieModeDeJeu2 -eq 1 ] #Si finDuJeu est différent de 1
                			then #Alors
 
-                    			echo -e "Joueur 2 : Quel est le nombre ? " #On affiche à l'écran Joueur 2 : Quel est le nombre ?
+                    			echo -e "Joueur 2 : Selon toi, quel est le nombre mystère ? \n" #On affiche à l'écran Joueur 2 : Quel est le nombre ?
                     			read nombreEntre2 #On scanne le nombreEntre par le joueur 2
 
                 			if [ "$nombreMystere2" -gt "$nombreEntre2" ]  #Si le nombreMystere2 est plus grand que le nombreEntre2
@@ -400,8 +400,8 @@ do
 					else #Sinon
                 		
                     				echo -e "Bravo, joueur 2 vous avez trouvés le nombre mystere en $compteurDeCoups coups !!!\n\n" #On affiche Bravo, vous avez trouve le nombre mystere en  x coups !!!
-                    				echo -e "C'est dommage joueur 1, vous avez perdu avec $compteurDeCoups2 tenattives vous ferez mieux la prochaine fois"
-						echo -e "Joueur 2 à vous de donner la réponse à la question suivante"
+                    				echo -e "C'est dommage joueur 1, vous avez perdu avec $compteurDeCoups2 tenattives vous ferez mieux la prochaine fois \n"
+						echo -e "Joueur 2 à vous de donner la réponse à la question suivante \n"
 						partieModeDeJeu2=0
                 			fi #Fin de la condition où le nombreMystere2 est plus petit que le nombreEntre2
 
@@ -409,9 +409,9 @@ do
                 			then # Alors
 
                     				echo -e "\t*****************GAME-OVER*****************\n" #On affiche AU-REVOIR quand l'utilisateur quitte le jeu
-						echo -e "Le joueur 2 a perdu avec $compteurDeCoups2 tentatives"
-						echo -e "Le joueur 1 a gagné avec $compteurDeCoups tentatives"
-						echo -e "Joueur 1 à vous de donner la réponse à la question suivante"
+						echo -e "Le joueur 2 a perdu avec $compteurDeCoups2 tentatives \n"
+						echo -e "Le joueur 1 a gagné avec $compteurDeCoups tentatives \n"
+						echo -e "Joueur 1 à vous de donner la réponse à la question suivante \n"
 						partieModeDeJeu2=0
 						nombreEntre=$nombreMystere
 
@@ -431,7 +431,7 @@ do
            	
         		compteurMort2=$compteurMort; #On simule le scanne le compteurMort
 			echo -e "Au bout de combien de tentatives voulez vous mourir IA? $compteurMort2 \n  " #On affiche votre choix à l'écran
-            		echo -e "$compteurMort2 \n" #On affiche à l'écran le compteurMort2 qui simule la réponse de l'IA
+            		#echo -e "$compteurMort2 \n" #On affiche à l'écran le compteurMort2 qui simule la réponse de l'IA
 
 			#echo -e "nombreEntre2 avant while ligne 420 : $nombreEntre2 \n"
 
@@ -445,7 +445,7 @@ do
                 		if [ $partieModeDeJeu3 -eq 1 ] #Si On est toujours dans la partie 3
                 		then #Aors
 
-                    			echo -e "Joueur 1 : Quel est le nombre ? " #On affiche à l'écran Joueur 1 : Quel est le nombre ?
+                    			echo -e "Joueur 1 : Selon toi, quel est le nombre mystère ? \n " #On affiche à l'écran Joueur 1 : Quel est le nombre ?
                     			read nombreEntre #On lit le nombreEntre
 
                 
@@ -469,23 +469,23 @@ do
                     				echo -e "Bravo, Joueur 1 vous avez trouve le nombre mystere en $compteurDeCoups coups !!!\n\n" #On affiche à l'écran Bravo, IA vous avez trouve le nombre mystere en %compteurDeCoups coups !!!
                     				echo -e "Bravo, vous avez trouve le nombre mystere en $compteurDeCoups coups !!!\n\n" #On affiche Bravo, vous avez trouve le nombre mystere en  x coups !!!
 						echo -e "C'est dommage joueur 2, vous avez perdu avec $compteurDeCoups2 tenattives vous ferez mieux la prochaine fois"
-						echo -e "Joueur 1 à vous de donner la réponse à la question suivante"
+						echo -e "Joueur 1 à vous de donner la réponse à la question suivante \n"
                     				partieModeDeJeu3=0
                		 		fi #Fin de la condition sur le cas où le nombreEntre est inférieur au nombre mystère
 
 
-					echo -e "\n \n CompteurMort : $compteurMort"
+					#echo -e "\n \n CompteurMort : $compteurMort"
 
- 					echo -e "compteurDeCoups : $compteurDeCoups \n \n "
+ 					#echo -e "compteurDeCoups : $compteurDeCoups \n \n "
 
                	 			if [ "$compteurMort" -le "$compteurDeCoups" ] #Si le compteurMort est égale au compteurDeCoups
                		 		then #alors
                    		 		echo -e "\t*****************GAME-OVER*****************\n" #On affiche AU-REVOIR quand l'utilisateur quitte le jeu
-						echo -e "Le joueur 1 a perdu avec $compteurDeCoups tentatives"
-						echo -e "IA a gagné avec $compteurDeCoups2 tentatives"
-						echo -e "IA à vous de donner la réponse à la question suivante"
-						echo -e "Non je préfère que ce soit joueur 1 qui choisisse"
-						echo -e "Comme tu voudras IA joueur 1 à vous de répondre à cette question"
+						echo -e "Le joueur 1 a perdu avec $compteurDeCoups tentatives \n"
+						echo -e "IA a gagné avec $compteurDeCoups2 tentatives \n"
+						echo -e "IA à vous de donner la réponse à la question suivante \n"
+						echo -e "Non je préfère que ce soit joueur 1 qui choisisse \n"
+						echo -e "Comme tu voudras IA joueur 1 à vous de répondre à cette question \n"
                     				partieModeDeJeu3=0
 						nombreEntre2=$nombreMystere2
 						break;
@@ -508,30 +508,32 @@ do
                			if [ $partieModeDeJeu3 -eq 1 ] #Si finDuJeu est différent de 1
                			then #Alors
 
+					echo -e "IA: Selon toi, quel est le nombre mystère ? \n"
                         		nombreEntre2=$nombrePasEncoreEntre2;
+					echo -e "$nombreEntre2 \n"
 
-					echo -e " Nombre mystere : $nombreMystere2 \n "
-					echo -e " Nombre entre 2 : $nombreEntre2 \n "
+					#echo -e " Nombre mystere : $nombreMystere2 \n "
+					#echo -e " Nombre entre 2 : $nombreEntre2 \n "
 
                         		if [ "$nombreMystere2" -gt "$nombreEntre2" ]   #Si le nombreMystere est plus grand que le nombreEntre
                         		then
                             			echo -e "C'est plus !\n\n" #On affiche C'est plus ! à l'écran
                             			# maxNombreMystere2 = maxNombreMystere2; # Le nombre Mystère  maximal à chercher
-                            			echo -e "Le maximum possible du nombre mystere est de: $maxNombreMystere2 \n"
+                            			#echo -e "Le maximum possible du nombre mystere est de: $maxNombreMystere2 \n"
                             			minNombreMystere2=$nombreEntre2; #Le nombre mystère mini à chercher est le nombre que l'on a trouvé +1
 
 					
 
                             			#echo -e "Le minimum possible du nombre mystere est de: $minNombreMystere2 \n";
 						calcul1=$(expr $maxNombreMystere2 + $minNombreMystere2);
-						echo -e "calcul1 : $calcul1 \n";
+						#echo -e "calcul1 : $calcul1 \n";
 						nombreMoitieIntervalleMystere2=$(expr $calcul1 / 2);
-						echo -e "resultat2 : $nombreMoitieIntervalleMystere2 \n";
+						#echo -e "resultat2 : $nombreMoitieIntervalleMystere2 \n";
 						nombrePasEncoreEntre2=$nombreMoitieIntervalleMystere2; # Le nombre entré par l'IA correspond à la moitié de l'intervalle du nombre mystère mini et du nombre mystère
                             		#nombreMoitieIntervalleMystere2=expr `expr `${maxNombreMystere2} + ${minNombreMystere2}` / 2`  ; # On définit nombreMoitieIntervalleMystere comme étant le nombre à la moitié de l'intervalle de recherche du nombre mystère
-                            			echo -e "IA : On est curieux quel prochain nombre rentrera tu ?" #On affiche à l'écran Joueur 2 : Quel est le nombre ?
+                            			#echo -e "IA : On est curieux quel prochain nombre rentrera tu ?" #On affiche à l'écran Joueur 2 : Quel est le nombre ?
                             			nombrePasEncoreEntre2=$nombreMoitieIntervalleMystere2; # Le nombre entré par l'IA correspond à la moitié de l'intervalle du nombre mystère mini et du nombre mystère maxi
-                            			echo -e "$nombrePasEncoreEntre2 \n"
+                            			#echo -e "$nombrePasEncoreEntre2 \n"
 
                            		# if(($nombrePasEncoreEntre2==$nombreMystere2))
                            		# then
@@ -544,7 +546,7 @@ do
                        	 		then
                             			echo -e "C'est moins !\n\n" #On affiche C'est moins ! à l'écran
                             			maxNombreMystere2=$nombreEntre2; #Le nombre mystère maxi à chercher est le nombre que l'on a trouvé -1
-                            			echo -e "Le maximum possible du nombre mystere est de: $maxNombreMystere2 \n"
+                            			#echo -e "Le maximum possible du nombre mystere est de: $maxNombreMystere2 \n"
                             			#minNombreMystere2=$minNombreMystere2; #Le nombre minimal à chercher reste le nombre minimal à chercher
 
 
@@ -552,14 +554,14 @@ do
                             		
                             			#echo -e "Le minimum possible du nombre mystere est de: $minNombreMystere2 \n";
 						calcul1=$(expr $maxNombreMystere2 + $minNombreMystere2);
-						echo -e "calcul1 : $calcul1 \n";
+						#echo -e "calcul1 : $calcul1 \n";
 						nombreMoitieIntervalleMystere2=$(expr $calcul1 / 2);
-						echo -e "resultat2 : $nombreMoitieIntervalleMystere2 \n";
+						#echo -e "resultat2 : $nombreMoitieIntervalleMystere2 \n";
 						nombrePasEncoreEntre2=$nombreMoitieIntervalleMystere2; # Le nombre entré par l'IA correspond à la moitié de l'intervalle du nombre mystère mini et du nombre mystère
                             			#nombreMoitieIntervalleMystere2=expr `expr `${maxNombreMystere2} + ${minNombreMystere2}` / 2`  ; # On définit nombreMoitieIntervalleMystere comme étant le nombre à la moitié de l'intervalle de recherche du nombre mystère
-                            			echo -e "IA : On est curieux quel prochain nombre rentrera tu ?" #On affiche à l'écran Joueur 2 : Quel est le nombre ?
+                            			#echo -e "IA : On est curieux quel prochain nombre rentrera tu ?" #On affiche à l'écran Joueur 2 : Quel est le nombre ?
                             			nombrePasEncoreEntre2=$nombreMoitieIntervalleMystere2; # Le nombre entré par l'IA correspond à la moitié de l'intervalle du nombre mystère mini et du nombre mystère maxi
-                            			echo -e "$nombrePasEncoreEntre2 \n"
+                            			#echo -e "$nombrePasEncoreEntre2 \n"
 
                             		#if(($nombrePasEncoreEntre2==$nombreMystere2)) #Si le nombre pas encore entré numéro 2 est égale au deuxième nombre mystère
                             		#then
@@ -573,10 +575,10 @@ do
                         
                             			echo -e "Bravo, vous avez trouve le nombre mystere qui est $nombreMystere2 en $compteurDeCoups2 coups !!!\n\n" #On affiche Bravo, vous avez trouve le nombre mystere en  x coups !!!
 						echo -e "Bravo, IA vous avez trouvés le nombre mystere en $compteurDeCoups coups !!!\n\n" #On affiche Bravo, vous avez trouve le nombre mystere en  x coups !!!
-                    				echo -e "C'est dommage joueur 1, vous avez perdu avec $compteurDeCoups2 tenattives vous ferez mieux la prochaine fois"
-						echo -e "IA à vous de donner la réponse à la question suivante"
-						echo -e "Non je préfère que ce soit joueur 1 qui choisisse"
-						echo -e "Comme tu voudras IA joueur 1 à vous de répondre à cette question"
+                    				echo -e "C'est dommage joueur 1, vous avez perdu avec $compteurDeCoups2 tentatives vous ferez mieux la prochaine fois \n"
+						echo -e "IA à vous de donner la réponse à la question suivante \n"
+						echo -e "Non je préfère que ce soit joueur 1 qui choisisse \n"
+						echo -e "Comme tu voudras IA joueur 1 à vous de répondre à cette question \n"
 						partieModeDeJeu3=0
                        	 		fi #Fin des conditions de comparaisons des nombres
 
@@ -591,9 +593,9 @@ do
 
 
                             			echo -e "\t*****************GAME-OVER*****************\n" #On affiche GAME OVER
-						echo -e "IA a perdu avec $compteurDeCoups2 tentatives"
-						echo -e "Le joueur 1 a gagné avec $compteurDeCoups tentatives"
-						echo -e "Joueur 1 à vous de donner la réponse à la question suivante"
+						echo -e "IA a perdu avec $compteurDeCoups2 tentatives \n"
+						echo -e "Le joueur 1 a gagné avec $compteurDeCoups tentatives \n"
+						echo -e "Joueur 1 à vous de donner la réponse à la question suivante \n"
                             			partieModeDeJeu3=0
 						nombreEntre=$nombreMystere #Pour sortir de la boucle
 
@@ -615,7 +617,7 @@ do
 
 
 
-		echo -e "An error has occured"
+		echo -e "An error has occured \n"
 		#continuerPartie=1;
 		continuerPartie
 

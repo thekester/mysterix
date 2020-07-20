@@ -187,7 +187,7 @@
       						#Programme pricipal
 
 
-while(($continuerPartie==1))
+while [ $continuerPartie -eq 1 ]
 do
 	#eog pour mettre une tonne d'images
 	#eog image1.jpeg 
@@ -198,7 +198,7 @@ do
      	#nombreEntre2=$(expr $maxNombreMystere2 / 2); # On dit à l'IA qu'elle doit rentrer la moitié du maximum
 	#echo -e "nombreEntre2 après modification début while ligne 196 : $nombreEntre2 "
 	menu
-	if(($niveauDeDifficulte==1)) #Si niveauDeDifficulte vaut 1
+	if [ $niveauDeDifficulte -eq 1 ] #Si niveauDeDifficulte vaut 1
 	then #Alors
 		max=100
         	maxNombreMystere2=$max #Le maximum du nombre mystere
@@ -212,7 +212,7 @@ do
 
 		#echo -e "$nombreEntre2 \n"
         	debutDuJeu=1 #On affecte la variable debutDuJeu à 1
-	elif(($niveauDeDifficulte == 2)) #Sinon si le niveauDeDifficulte==2
+	elif [ $niveauDeDifficulte -eq 2 ] #Sinon si le niveauDeDifficulte==2
 	then #alors
 		max=1000 #On affecte la variable max à 1000
         	maxNombreMystere2=$max #Le maximum du nombre mystere
@@ -223,7 +223,7 @@ do
        		nombrePasEncoreEntre2=$( expr $maxNombreMystere2 / 2 ); # On dit à l'IA qu'elle doit rentrer la moitié du maximum
 		#echo -e nombreEntre2,"\n"
         	debutDuJeu=1 #On affecte la variable 
-	elif(($niveauDeDifficulte==3)) #Sinon si le niveauDeDifficulte==3
+	elif [ $niveauDeDifficulte -eq 3 ] #Sinon si le niveauDeDifficulte==3
 	then
 		max=10000 #On affecte la variable max à 10000
         	maxNombreMystere2=$max #Le maximum du nombre mystere
@@ -244,17 +244,17 @@ do
 	fi #Fin de la condition si le niveauDeDifficulte vaut 1
 
 
-	if(($niveauDeDifficulte==1)) #Si le niveauDeDifficulte vaut 1
+	if [ $niveauDeDifficulte -eq 1 ] #Si le niveauDeDifficulte vaut 1
         then #alors
             nombreMystere=$((RANDOM%100+0));   #Génération du nombre aléatoire
             nombreMystere2=$((RANDOM%100+0));   #Génération du nombre aléatoire
 
-	elif(($niveauDeDifficulte==2)) #Sinon si le niveauDeDifficulte vaut 2
+	elif [ $niveauDeDifficulte -eq 2 ] #Sinon si le niveauDeDifficulte vaut 2
 	then #alors
 		nombreMystere=$((RANDOM%1000+0));   #Génération du nombre aléatoire
            	nombreMystere2=$((RANDOM%1000+0));   #Génération du nombre aléatoire
 
-	elif(($niveauDeDifficulte==3)) #Sinon si le niveauDeDifficulte vaut 3
+	elif [ $niveauDeDifficulte -eq 3 ] #Sinon si le niveauDeDifficulte vaut 3
 	then #alors
 		nombreMystere=$((RANDOM%10000+0));   #Génération du nombre aléatoire
            	nombreMystere2=$((RANDOM%10000+0));   #Génération du nombre aléatoire	
@@ -285,7 +285,7 @@ do
 
                     			echo -e  " C'est plus !\n\n " #On affiche C'est plus ! à l'écran
 
-                		elif [ "$nombreMystere" -gt "$nombreEntre" ] # Sinon si le nombreMystere est plus petit que le nombreEntre
+                		elif [ "$nombreMystere" -lt "$nombreEntre" ] # Sinon si le nombreMystere est plus petit que le nombreEntre
 				then #Alors
 
                     			echo -e " C'est moins !\n\n "; #On affiche C'est moins ! à l'écran

@@ -43,10 +43,10 @@
 							#Les fonctions
 
 
-							function menuPrincipale
+							function menuPrincipal
 							{
 
-								echo -e "\tMENU PRINCIPALE\n" #On affiche menu principale
+								echo -e "\tMENU PRINCIPAL\n" #On affiche menu principale
 								echo -e "Mode 1 joueur tapez 1 \n Mode 2 joueurs tapez 2 \n Joueur vs ordinateur taper 3 \n Votre choix : \n" #On affiche Mode 1 joueur tapez 1 \n Mode 2 joueurs tapez 2 \n Joueur vs ordinateur taper 3 \n Votre choix 
 								read modeDuJeu #Lire le modeDuJeu
 
@@ -104,12 +104,12 @@
 
 							{
 								
-								menuPrincipale
+								menuPrincipal
 								while(($modeDuJeu !=1 && $modeDuJeu !=2 && $modeDuJeu !=3 ))
 								do
 									echo -e " \n Mauvaise saisie \n"
 
-									menuPrincipale
+									menuPrincipal
 
 								done
 

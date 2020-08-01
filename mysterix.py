@@ -174,9 +174,9 @@ while(continuerPartieVar==1):
                     elif(nombreMystere2 < nombreMystere2):
                         print("C'est moins!  \n \n")
                     else:
-                        print("Bravo, "+nomJoueur2+ "vous avez trouvés le nombre mystere en"+ compteurDeCoups2 + " coups !!!\n\n")
+                        print("Bravo, "+nomJoueur2+ " vous avez trouvés le nombre mystere en"+ compteurDeCoups2 + " coups !!!\n\n")
                         print("C'est dommage"+ nomJoueur1 +", vous avez perdu avec " + compteurDeCoups + "tentatives vous ferez mieux la prochaine fois \n")
-                        print(nomJoueur2+"à vous de donner la réponse à la question suivante \n")
+                        print(nomJoueur2+" à vous de donner la réponse à la question suivante \n")
                         partieModeDeJeu2=0
                     if(int(compteurMort) <= compteurDeCoups):
                         print("\t*****************GAME-OVER*****************\n")
@@ -188,28 +188,28 @@ while(continuerPartieVar==1):
     elif(modeDuJeu==3):
         while(partieModeDeJeu3==1):
             compteurMort2=compteurMort
-            print("Au bout de combien de tentatives voulez vous mourir IA?"+compteurMort2+" \n")
+            print("Au bout de combien de tentatives voulez vous mourir IA? "+str(compteurMort2)+" \n")
             while(nombreEntre!=nombreMystere or nombreEntre2 != nombreMystere2):
                 compteurDeCoups=compteurDeCoups+1
                 if(partieModeDeJeu3 == 1):
-                    print(nomJoueur1+": Selon toi, quel est le nombre mystère ? \n")
+                    print(nomJoueur1+" : Selon toi, quel est le nombre mystère ? \n")
                     nombreEntre=int(input())
                     if(nombreMystere > nombreEntre):
                         print("C'est plus! \n \n")
                     elif(nombreMystere < nombreEntre):
                         print("C'est moins!  \n \n")
                     else:
-                        print("Bravo, "+nomJoueur1+ "vous avez trouvés le nombre mystere en"+ compteurDeCoups + " coups !!!\n\n")
-                        print("C'est dommage IA, vous avez perdu avec " + compteurDeCoups2 + "tentatives vous ferez mieux la prochaine fois \n")
-                        print(nomJoueur1+"à vous de donner la réponse à la question suivante \n")
+                        print("Bravo, "+nomJoueur1+ "vous avez trouvés le nombre mystere en"+ str(compteurDeCoups) + " coups !!!\n\n")
+                        print("C'est dommage IA, vous avez perdu avec " + str(compteurDeCoups2) + "tentatives vous ferez mieux la prochaine fois \n")
+                        print(nomJoueur1+" à vous de donner la réponse à la question suivante \n")
                         partieModeDeJeu3=0
                     if(int(compteurMort) <= compteurDeCoups):
                         print("\t*****************GAME-OVER*****************\n" )
-                        print(nomJoueur1+"a perdu avec $compteurDeCoups tentatives \n")
-                        print("IA a gagné avec"+compteurDeCoups2+" tentatives \n")
+                        print(nomJoueur1+"a perdu avec "+str(compteurDeCoups) + " tentatives \n")
+                        print("IA a gagné avec"+str(compteurDeCoups2)+" tentatives \n")
                         print("IA à vous de donner la réponse à la question suivante \n")
-                        print("Non je préfère que ce soit"+nomJoueur1+" qui choisisse \n")
-                        print("Comme tu voudras IA"+nomJoueur1+" à vous de répondre à cette question \n")
+                        print("Non je préfère que ce soit "+nomJoueur1+" qui choisisse \n")
+                        print("Comme tu voudras IA "+nomJoueur1+" à vous de répondre à cette question \n")
                         partieModeDeJeu3=0
                         nombreEntre2=nombreMystere2
                 if(partieModeDeJeu3 == 1):
@@ -230,16 +230,16 @@ while(continuerPartieVar==1):
                         nombreMoitieIntervalleMystere2= calcul1/2
                         nombrePasEncoreEntre2=nombreMoitieIntervalleMystere2
                     else:
-                        print("Bravo, IA vous avez trouvés le nombre mystère qui est"+ nombreMystere2 +" en "+ compteurDeCoups2 + "coups !!!\n\n")
-                        print("C'est dommage"+nomJoueur1+ ", vous avez perdu avec "+compteurDeCoups2+" tentatives vous ferez mieux la prochaine fois \n")
+                        print("Bravo, IA vous avez trouvés le nombre mystère qui est "+ str(nombreMystere2) +" en "+ str(compteurDeCoups2) + "coups !!!\n\n")
+                        print("C'est dommage "+nomJoueur1+ ", vous avez perdu avec "+ str(compteurDeCoups2)+" tentatives vous ferez mieux la prochaine fois \n")
                         print("IA à vous de donner la réponse à la question suivante \n")
-                        print("Non je préfère que ce soit"+nomJoueur1 +" qui choisisse \n")
-                        print("Comme tu voudras IA"+ nomJoueur1 +" à vous de répondre à cette question \n")
+                        print("Non je préfère que ce soit "+nomJoueur1 +" qui choisisse \n")
+                        print("Comme tu voudras IA" + nomJoueur1 +" à vous de répondre à cette question \n")
                         partieModeDeJeu3=0
                     if(compteurMort2 <= compteurDeCoups2):
                         print("\t*****************GAME-OVER*****************\n" )
-                        print("IA a perdu avec"+compteurDeCoups2 +"tentatives \n")
-                        print(nomJoueur1 +" a gagné avec" + compteurDeCoups + " tentatives \n")
+                        print("IA a perdu avec "+str(compteurDeCoups2) +" tentatives \n")
+                        print(nomJoueur1 +" a gagné avec" + str(compteurDeCoups) + " tentatives \n")
                         print(nomJoueur1 + " à vous de donner la réponse à la question suivante \n")
                         partieModeDeJeu3=0
                 nombreEntre=nombreMystere              		

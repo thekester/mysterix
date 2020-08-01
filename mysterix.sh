@@ -7,13 +7,10 @@
 #*************************************************** Objectifs ***************************************************
 
 					# Faire plus de test
-					# Donner un nom aux joueurs
 					# Mémoriser score joueur 
 					# Avoir mode compétition et mode loisir
 					# Réalisation chrono
 					# Hacking version clé champignon Windows Linux Mac simulation jouer contre IA sinon IA hacker ordinateur  
-
-
 
     							#Initialisation des variables
 
@@ -38,11 +35,7 @@
 							nombreMystere2=0
 							reponseQuestionIA='te'
 
-
-
-
 							#Les fonctions
-
 
 							function menuPrincipal
 							{
@@ -81,103 +74,34 @@
 								echo -e "\t*****************NIVEAU DU JEU*****************\n" #On affiche *****************NIVEAU DU JEU*****************
 								echo -e "Niveau entre 1 et 100 : taper 1\nNiveau entre 1 et 1000 : taper 2\nNiveau entre 1 et 10000 : taper 3\n" #On affiche Niveau entre 1 et 100 : taper 1\nNiveau entre 1 et 1000 : taper 2\nNiveau entre 1 et 10000 : taper 3\n
 								read -p "Votre choix : " niveauDeDifficulte #On lit le niveau de difficulté en affichant en même temps votre choix:
-								
-
-
-
 							}
-
-
-
-
-
 							function menu
-
 							{
-								
 								menuPrincipal
 								while(($modeDuJeu !=1 && $modeDuJeu !=2 && $modeDuJeu !=3 ))
 								do
 									echo -e " \n Mauvaise saisie \n"
-
 									menuPrincipal
-
 								done
-
 								niveau
-								
-			
-
 								while(($niveauDeDifficulte !=1 && $niveauDeDifficulte !=2 && $niveauDeDifficulte !=3 ))
 								do
-
 									echo -e  " \n Mauvaise saisie \n"
-
 									niveau
-
 								done
-
-
-
-
-
-									read -p "Au bout de combien de tentatives voulez vous mourir joueur 1? " compteurMort
-
-								
+									read -p "Au bout de combien de tentatives voulez vous mourir joueur 1? " compteurMort	
 							}
-
 							function continuerPartie
-
 							{
-
 								echo -e  " \n Une autre partie? 1 pour oui et 0 pour non \n"
 								read continuerPartie
-
 								while(($continuerPartie!=1 && $continuerPartie!=0))
 								do
-
 									echo -e  " \n Une autre partie? 1 pour oui et 0 pour non \n"
 									read continuerPartie
 								done
-
-								#if (($continuerPartie==1))
-								#then
-
-									#finDuJeu=0;
-								#else
-                   			 				#finDuJeu=1; #finDuJeu vaut 1
-								#fi
-
-
-
-
-
 							}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
       						#Programme pricipal
-
-
 while [ $continuerPartie -eq 1 ]
 do
 	#eog pour mettre une tonne d'images

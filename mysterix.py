@@ -3,6 +3,12 @@
 
 from random import randint
 
+#https://qastack.fr/unix/410579/change-the-python3-default-version-in-ubuntu
+
+#https://www.youtube.com/watch?v=3lGhtIqT0Tk
+#https://datatofish.com/executable-pyinstaller
+
+
 nomJoueur1=''
 nomJoueur2=''
 compteurDeCoups=0

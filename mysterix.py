@@ -99,24 +99,18 @@ while(continuerPartieVar==1):
     menu()
     if(niveauDeDifficulte==1):
         max=100
-        maxNombreMystere2=max
-        minNombreMystere2=min
-        nombrePasEncoreEntre2=maxNombreMystere2/2
         debutDuJeu=1
     elif(niveauDeDifficulte == 2):
         max=1000
-        maxNombreMystere2=max
-        minNombreMystere2=min
-        nombrePasEncoreEntre2=maxNombreMystere2/2
         debutDuJeu=1
     elif (niveauDeDifficulte==3) :
         max=10000
-        maxNombreMystere2=max
-        minNombreMystere2=min
-        nombrePasEncoreEntre2=maxNombreMystere2/2
         debutDuJeu=1
     else:
 	    niveau()
+    maxNombreMystere2=max
+    minNombreMystere2=min
+    nombrePasEncoreEntre2=maxNombreMystere2/2
     if(niveauDeDifficulte==1):
         nombreMystere=randint(1,100)
         nombreMystere2=randint(1,100)
@@ -140,7 +134,7 @@ while(continuerPartieVar==1):
                 elif(nombreMystere < int(nombreEntre)):
                     print("C'est moins")
                 else:
-                    print("Bravo, vous avez trouve le nombre mystere en "+compteurDeCoups+" coups !!!\n\n")
+                    print("Bravo, vous avez trouve le nombre mystere en ",compteurDeCoups," coups !!!\n\n")
                     partieModeDeJeu1=0
                 if(int(compteurMort) <= compteurDeCoups):
                     print("\t*****************GAME-OVER*****************\n")
@@ -160,8 +154,8 @@ while(continuerPartieVar==1):
                     elif(nombreMystere < nombreEntre):
                         print("C'est moins!  \n \n")
                     else:
-                        print("Bravo, "+nomJoueur1+ "vous avez trouvés le nombre mystere en"+ compteurDeCoups + " coups !!!\n\n")
-                        print("C'est dommage"+ nomJoueur2 +", vous avez perdu avec " + compteurDeCoups2 + "tentatives vous ferez mieux la prochaine fois \n")
+                        print("Bravo, ",nomJoueur1, "vous avez trouvés le nombre mystere en", compteurDeCoups , " coups !!!\n\n")
+                        print("C'est dommage" , nomJoueur2 ,", vous avez perdu avec " , compteurDeCoups2 , "tentatives vous ferez mieux la prochaine fois \n")
                         print(nomJoueur1+"à vous de donner la réponse à la question suivante \n")
                         partieModeDeJeu2=0
                     if(compteurMort <= compteurDeCoups):
@@ -180,15 +174,15 @@ while(continuerPartieVar==1):
                     elif(nombreMystere2 < nombreMystere2):
                         print("C'est moins!  \n \n")
                     else:
-                        print("Bravo, "+nomJoueur2+ " vous avez trouvés le nombre mystere en"+ compteurDeCoups2 + " coups !!!\n\n")
-                        print("C'est dommage"+ nomJoueur1 +", vous avez perdu avec " + compteurDeCoups + "tentatives vous ferez mieux la prochaine fois \n")
+                        print("Bravo, ",nomJoueur2, " vous avez trouvés le nombre mystere en", compteurDeCoups2 , " coups !!!\n\n")
+                        print("C'est dommage", nomJoueur1 ,", vous avez perdu avec " , compteurDeCoups , "tentatives vous ferez mieux la prochaine fois \n")
                         print(nomJoueur2+" à vous de donner la réponse à la question suivante \n")
                         partieModeDeJeu2=0
                     if(int(compteurMort) <= compteurDeCoups):
                         print("\t*****************GAME-OVER*****************\n")
-                        print(nomJoueur2+" a perdu avec "+compteurDeCoups2+" tentatives \n")
-                        print(nomJoueur1+" a gagné avec "+compteurDeCoups+" tentatives \n")
-                        print(nomJoueur1+" à vous de donner la réponse à la question suivante \n")
+                        print(nomJoueur2," a perdu avec ",compteurDeCoups2," tentatives \n")
+                        print(nomJoueur1," a gagné avec ",compteurDeCoups," tentatives \n")
+                        print(nomJoueur1," à vous de donner la réponse à la question suivante \n")
                         partieModeDeJeu2=0
             nombreEntre=nombreMystere
     elif(modeDuJeu==3):
